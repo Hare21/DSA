@@ -9,10 +9,10 @@ class Solution {
         int n = nums.length;
 
         for (int i = 0; i < n - 3; i++) {
-            if (i > 0 && nums[i] == nums[i - 1]) continue; // skip same first number
+            if (i > 0 && nums[i] == nums[i - 1]) continue; 
 
             for (int j = i + 1; j < n - 2; j++) {
-                if (j > i + 1 && nums[j] == nums[j - 1]) continue; // skip same second number
+                if (j > i + 1 && nums[j] == nums[j - 1]) continue; 
 
                 int l = j + 1, r = n - 1;
 
@@ -22,7 +22,7 @@ class Solution {
                     if (sum == target) {
                         res.add(Arrays.asList(nums[i], nums[j], nums[l], nums[r]));
 
-                        // move l and r, skipping duplicates to avoid repeated quadruplets
+                        // move l and r, skipping duplicates
                         int lv = nums[l], rv = nums[r];
                         while (l < r && nums[l] == lv) l++;
                         while (l < r && nums[r] == rv) r--;
